@@ -1,7 +1,12 @@
 HackerNewsRails::Application.routes.draw do
-  root :to => 'posts#index'
-  resources :posts
-  resources :users
+  root :to => 'welcome#index'
+
+  resources :users do
+    resources :posts do
+      resources :comments
+    end
+    resources :comments
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
