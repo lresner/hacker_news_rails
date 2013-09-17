@@ -9,8 +9,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    #find user
-    #if user auth then create session and redirect
-    redirect_to(root_path)
+    @user = User.find_by_username(params[:session][:username])
+    if @user #&& user.authenticate?
+      session[:user_id] = @user.id
+      redirect_to(root_path)
+    else
+      #error
+    end
   end
 end

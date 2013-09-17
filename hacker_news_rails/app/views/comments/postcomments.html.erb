@@ -1,8 +1,12 @@
 <!-- postcomments index -->
-<%= form_for :comment, url: {action: "create"} do |f| %>
+<%= form_for ([@post, @comment]) do |f| %>
   <p>
     <%= f.label :content %><br>
-    <%= f.text_area :conent %>
+    <%= f.text_area :content %>
+  </p>
+
+   <%=  %>
+
   </p>
   <p>
     <%= f.submit %>

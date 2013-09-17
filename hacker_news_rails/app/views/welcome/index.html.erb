@@ -1,8 +1,9 @@
 <!-- welcome index -->
 <div>
   <ul>
-    <% if @current_user %>
+    <% if session[:user_id] %>
       <li><%=link_to "sign out", logout_path %></li>
+      <li><%= link_to "create new post", new_user_post_path(session[:user_id]) %></li>
     <% else %>
       <li><%=link_to "sign in", sign_in_path %></li>
     <% end %>
