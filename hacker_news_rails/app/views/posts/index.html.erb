@@ -1,3 +1,5 @@
+<!-- posts index -->
+
 <ol>
   <% @user.posts.each do |post|  %>
     <li><%= link_to post.title, post.url  %> | <%= link_to post.user.username, user_path(post.user.id)%></li>

@@ -1,0 +1,7 @@
+<!-- comments index -->
+
+<ol>
+  <% @user.comments.each do |comment|  %>
+    <li><%=comment.content %> | <%= link_to comment.user.username, user_path(comment.user.id)%></li>
+  <%end  %>
+</ol>

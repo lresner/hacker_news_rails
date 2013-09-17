@@ -1,0 +1,34 @@
+<!-- session sign_in -->
+
+<!-- login user -->
+<h3>Log In</h3>
+<%= form_for :session, url: {action: "create"} do |f| %>
+  <p>
+    <%= f.label :username %><br>
+    <%= f.text_field :username  %>
+  </p>
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password  %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+<!-- create user -->
+<h3>Create Account</h3>
+<%= form_for :user, url: {action: "create"} do |f| %>
+  <p>
+    <%= f.label :username %><br>
+    <%= f.text_field :username  %>
+  </p>
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password  %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

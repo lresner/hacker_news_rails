@@ -1,11 +1,19 @@
 HackerNewsRails::Application.routes.draw do
   root :to => 'welcome#index'
+  get '/logout' => 'sessions#logout', as: 'logout'
+  get '/sign_in' => 'sessions#sign_in', as: 'sign_in'
+  post '/sign_in' => 'sessions#create'
 
   resources :users do
-    resources :posts do
-      resources :comments
-    end
+    resources :posts
     resources :comments
+  end
+
+
+  resources :posts do
+    # get 'posts/:post_id/comments', to: redirect('/posts/:post_id/something')
+         get '/comments' => 'comments#postcomments'
+         resources :comments
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

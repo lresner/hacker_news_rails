@@ -1,5 +1,16 @@
+<!-- welcome index -->
+<div>
+  <ul>
+    <% if @current_user %>
+      <li><%=link_to "sign out", logout_path %></li>
+    <% else %>
+      <li><%=link_to "sign in", sign_in_path %></li>
+    <% end %>
+  </ul>
+
+</div>
 <ol>
   <% @posts.each do |post|  %>
-    <li><%= link_to post.title, post.url  %> | <%= link_to post.user.username, user_path(post.user.id)%></li>
+    <li><%= link_to post.title, post.url  %> | <%= link_to post.user.username, user_path(post.user.id)%> | <%= link_to "Comments", post_comments_path(post)  %></li>
   <%end  %>
 </ol>

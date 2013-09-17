@@ -7,4 +7,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def create
+    #create new user
+    #create session for user
+    #redirect to root
+  end
+
 end
